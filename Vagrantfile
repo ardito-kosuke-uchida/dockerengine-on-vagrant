@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 4096
     vb.cpus = 6
+    vb.customize ["setextradata", :id, "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled", 0]
   end
 
   config.vm.network "forwarded_port", guest: docker_guest_port, host: docker_host_port
