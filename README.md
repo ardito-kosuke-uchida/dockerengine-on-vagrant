@@ -1,6 +1,6 @@
 # dockerengine-on-vagrant
 
-* Vagrant (VirtualBox, Debian/bullseye) 上で動かすDocker Engine
+* Vagrant (VirtualBox, ubuntu/jammy) 上で動かすDocker Engine
 * Docker Machine (+boot2docker) の代わり
 
 
@@ -16,7 +16,7 @@
 仮想マシンを立ち上げ.
 
 ```sh
-vagrant up
+VAGRANT_EXPERIMENTAL="disks" vagrant up
 ```
 
 環境変数 `DOCKER_HOST` 指定して, 仮想マシンで起動するDocker Engine を利用可能.
