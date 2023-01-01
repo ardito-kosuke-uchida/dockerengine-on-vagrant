@@ -7,7 +7,8 @@ docker_host_port = ENV["DOCKER_PORT"] || "12376"
 shared_dir = ENV["VAGRANT_DOCKER_DIR"] || ENV["HOME"]
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/bullseye64"
+  config.vm.box = "ubuntu/jammy64"
+  config.vm.disk :disk, size: "120GB", primary: true
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 4096
